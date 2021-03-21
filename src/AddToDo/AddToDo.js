@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 
 class AddToDo extends Component {
@@ -10,28 +9,24 @@ class AddToDo extends Component {
   }
 
   handleChange = (e) => {
-    // console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
   handleSubmit = (e) => {
-    // console.log("test")
     e.preventDefault()
     const todo = {
       title: this.state.title,
       description: this.state.description,
       id: uuidv4()
     }
-    console.log(todo)
     this.props.addToDo(todo)
     this.props.history.push('/')
   }
 
 
   render() {
-    // console.log(this.props)
     let { title, description } = this.props
 
     return (

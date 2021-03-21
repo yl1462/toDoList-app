@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid'
 
 class EditToDo extends Component {
   state = {
@@ -11,7 +9,6 @@ class EditToDo extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location.state.todo)
     const {title, description, id} = this.props.location.state.todo
     const {index} = this.props.location.state
     this.setState({
@@ -23,7 +20,6 @@ class EditToDo extends Component {
   }
 
   handleChange = (e) => {
-    // console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -41,8 +37,7 @@ class EditToDo extends Component {
   }
 
   render() {
-    console.log(this.props)
-    const {title, description, id} = this.state
+    const {title, description} = this.state
 
     return (
       <>

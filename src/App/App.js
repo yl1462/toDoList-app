@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   addToDo = (todo) => {
-    console.log(todo)
     this.setState({todos: [...this.state.todos, todo]}) 
   }
 
@@ -63,7 +62,7 @@ class App extends Component {
         </main><br /><hr /><br />
 
         <footer>
-          <p>Created by Yuri Liang: <a href="https://yl1462.github.io/Yuri_Liang_portfolioPage/" target="_blank">Portfolio Page</a></p>
+          <p>Created by Yuri Liang: <a href="https://yl1462.github.io/Yuri_Liang_portfolioPage/" target="_blank" rel="noreferrer">Portfolio Page</a></p>
         </footer>
       </div>
     );
