@@ -11,7 +11,11 @@ class Todolist extends Component {
             {
               this.props.todos.map(todo => (
                 <li key={todo.id}>
-                  <p>{todo.title} <button><Link to='/edit'>Edit</Link></button> <button onClick={() => this.props.deleteToDo(todo.id)}>Delete</button></p>
+                  <p>
+                    {todo.title}<br />
+                    {todo.description}<br />
+                    <button><Link to={{pathname:`/edit/${todo.id}`, state:{todo}}}>Edit</Link> </button> <button onClick={() => this.props.deleteToDo(todo.id)}>Delete</button>
+                  </p>
                 </li>
               ))
             }

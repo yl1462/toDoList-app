@@ -9,25 +9,25 @@ class AddToDo extends Component {
     description: ''
   }
 
-  // handleChange = (e) => {
-  //   console.log(e.target.value)
-  //   this.setState({
-  //     [e.target.title]: e.target.value
-  //   })
-  // }
+  handleChange = (e) => {
+    // console.log(e.target.value)
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
 
-  // handleSubmit = (e) => {
-  //   console.log("test")
-  //   e.preventDefault()
-  //   const todo = {
-  //     title: this.state.title,
-  //     description: this.state.description,
-  //     id: uuidv4()
-  //   }
-  //   console.log(todo)
-  //   this.props.addToDo(todo)
-  //   // this.props.history.push('/')
-  // }
+  handleSubmit = (e) => {
+    // console.log("test")
+    e.preventDefault()
+    const todo = {
+      title: this.state.title,
+      description: this.state.description,
+      id: uuidv4()
+    }
+    console.log(todo)
+    this.props.addToDo(todo)
+    this.props.history.push('/')
+  }
 
 
   render() {
@@ -43,7 +43,7 @@ class AddToDo extends Component {
               placeholder='title'
               value={title}
               onChange={this.handleChange}
-              title='title'
+              name='title'
             />
             <br />
             <input
@@ -51,10 +51,10 @@ class AddToDo extends Component {
               placeholder='description'
               value={description}
               onChange={this.handleChange}
-              title='description'
+              name='description'
             />
             <br />
-            <button type='submit'><Link to='/'>Submit</Link></button>
+            <button type='submit'>Submit</button>
           </form>
         </div>
       </>

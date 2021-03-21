@@ -4,7 +4,6 @@ import './App.css'
 import Todolist from '../Todolist/Todolist'
 import AddToDo from '../AddToDo/AddToDo'
 import EditToDo from '../EditToDo/EditToDo'
-import Contact from '../Contact/Contact'
 import { v4 as uuidv4 } from 'uuid'
 
 class App extends Component {
@@ -25,29 +24,25 @@ class App extends Component {
     this.setState({todos: this.state.todos.filter(todo => todo.id !== id)}) 
   }
 
-  editToDo(editedToDo) {
+  editToDo = (editedToDo) => {
+    console.log(editedToDo)
+    console.log(this.state.todos)
+    const edited = this.state.todos.filter(todo => todo.id !== editedToDo.id)
     this.setState({
-      todo: editedToDo
+      todos: [...edited, editedToDo]
     })
-  }
-
-  contact = (theMessages) => {
-    this.setState({theMessages: [...this.state.theMessages, theMessages]})
+    // console.log(edited)
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <header className="App-header">
-          <header>
-            <nav>
-              <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/contact'>Contact Us</Link></li>
-              </ul>
-            </nav>
-          </header>
+            <h1>Hey there! What's the plan?</h1>
+            <Link to='/'>Home</Link><br /><hr /><br />
+        </header>
+
+        <main>  
           
         <Switch>
           <Route exact path='/'>
@@ -58,19 +53,21 @@ class App extends Component {
             render = {props => (
               <AddToDo addToDo={this.addToDo} {...props}/>
             )}
-            
           />
 
-          <Route path='/edit'>
-            <EditToDo onChange={this.editToDo}/>
-          </Route>
+          <Route path='/edit/:id' 
+            render = {props => (
+              <EditToDo editToDo={this.editToDo} todos={this.state.todos} {...props}/>
+            )}
+          />
 
-          <Route path='/contact'>
-            <Contact contact={this.contact}/>
-          </Route>
         </Switch>
 
-        </header>
+        </main><br /><hr /><br />
+
+        <footer>
+          <p>Created by Yuri Liang: <a href="https://yl1462.github.io/Yuri_Liang_portfolioPage/" target="_blank">Portfolio Page</a></p>
+        </footer>
       </div>
     );
   }
