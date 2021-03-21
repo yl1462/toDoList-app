@@ -6,16 +6,19 @@ class EditToDo extends Component {
   state = {
     title: '',
     description: '',
-    id: ''
+    id: '',
+    index: ''
   }
 
   componentDidMount() {
     console.log(this.props.location.state.todo)
     const {title, description, id} = this.props.location.state.todo
+    const {index} = this.props.location.state
     this.setState({
       title,
       description,
-      id
+      id,
+      index
     })
   }
 
@@ -33,7 +36,8 @@ class EditToDo extends Component {
       description: this.state.description,
       id: this.state.id
     }
-    this.props.editToDo(editedToDo)
+    this.props.editToDo(editedToDo, this.state.index)
+    this.props.history.push('/')
   }
 
   render() {

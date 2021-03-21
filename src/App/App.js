@@ -24,14 +24,11 @@ class App extends Component {
     this.setState({todos: this.state.todos.filter(todo => todo.id !== id)}) 
   }
 
-  editToDo = (editedToDo) => {
-    console.log(editedToDo)
-    console.log(this.state.todos)
-    const edited = this.state.todos.filter(todo => todo.id !== editedToDo.id)
+  editToDo = (editedToDo, index) => {
+    this.state.todos[index] = editedToDo
     this.setState({
-      todos: [...edited, editedToDo]
+      todos: [...this.state.todos]
     })
-    // console.log(edited)
   }
 
   render() {
