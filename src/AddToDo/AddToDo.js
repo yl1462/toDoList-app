@@ -39,6 +39,7 @@ class AddToDo extends Component {
               value={title}
               onChange={this.handleChange}
               name='title'
+              className="Placeholder"
             />
             <br />
             <input
@@ -47,9 +48,10 @@ class AddToDo extends Component {
               value={description}
               onChange={this.handleChange}
               name='description'
+              className="Placeholder"
             />
             <br />
-            <button type='submit'>Submit</button>
+            <button type='submit' className='AddToDo-button'>Submit</button>
           </form>
         </div>
       </>

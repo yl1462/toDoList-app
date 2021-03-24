@@ -47,12 +47,16 @@ class EditToDo extends Component {
               type='text' 
               value={title}  
               name='title'
-              onChange={this.handleChange}/><br />
+              onChange={this.handleChange}
+              className="Placeholder"
+              /><br />
             <input 
               type='text' 
               value={description}  
               name='description'
-              onChange={this.handleChange}/><br />
+              onChange={this.handleChange}
+              className="Placeholder"
+              /><br />
             <button 
               type='submit' 
               onSubmit={this.handleSubmit}

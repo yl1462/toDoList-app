@@ -33,23 +33,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-            <h1>Hey there! What's the plan?</h1>
-            <Link to='/'>Home</Link><br /><hr /><br />
+        <header>
+            <Link to='/' className="Home">
+              <h1>Hey there! What's the plan?</h1>
+            </Link>
+            <br />
         </header>
 
         <main>  
           
         <Switch>
-          <Route exact path='/'>
-            <Todolist todos={this.state.todos} deleteToDo={this.deleteToDo}/>
-          </Route>
-
           <Route path='/add' 
             render = {props => (
               <AddToDo addToDo={this.addToDo} {...props}/>
             )}
           />
+
+          <Route exact path='/'>
+            <Todolist todos={this.state.todos} deleteToDo={this.deleteToDo}/>
+          </Route>
 
           <Route path='/edit/:id' 
             render = {props => (
@@ -59,7 +61,7 @@ class App extends Component {
 
         </Switch>
 
-        </main><br /><hr /><br />
+        </main><br />
 
         <footer>
           <p>Created by Yuri Liang: <a href="https://yl1462.github.io/Yuri_Liang_portfolioPage/" target="_blank" rel="noreferrer">Portfolio Page</a></p>

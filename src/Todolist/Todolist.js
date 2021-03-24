@@ -6,8 +6,8 @@ class Todolist extends Component {
     return (
       <>
         <div className="toDoList">
+            <button><Link to='/add'>Add New</Link></button>
           <ul>
-
             {
               this.props.todos.map((todo, index) => (
                 <li key={todo.id}>
@@ -21,7 +21,6 @@ class Todolist extends Component {
             }
           </ul>
         </div>
-        <button><Link to='/add'>Add New</Link></button>
       </>
     );
   }

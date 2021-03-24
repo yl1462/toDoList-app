@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: #ffffff
+}
+
+body {
+  background: linear-gradient(
+    180deg,
+    #7400b8 0%,
+    #4EA8DE 50%,
+    #64DFDF 100%
+  );
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 550px;
+  min-height: 650px;
+  background: linear-gradient(
+    180deg,
+    #80FFDB 0%,
+    #64DFDF 20%,
+    #56CFE1 100% 
+  );
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 50px 0 0 0;
+  font-size: 30px;
+}
+
+.Home {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type:none;
+}
+
+ul li {
+  border-style: outset;
+}
+
+.AddToDo {
+  margin: 32px;
+}
+
+.Placeholder {
+  color: #7400B8
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    #4EA8DE 0%,
+    #6930C3 100%
+  );
+  color: #ffffff;
+  text-transform: capitalize;
+  margin: 15px;
+  text-decoration: none;
+}
+
+footer {
+  margin: 35px;
+}
