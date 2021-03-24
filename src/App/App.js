@@ -24,11 +24,19 @@ class App extends Component {
   }
 
   editToDo = (editedToDo, index) => {
-    this.state.todos[index] = editedToDo
+    const targetToDo = this.state.todos
+    targetToDo[index] = editedToDo
     this.setState({
-      todos: [...this.state.todos]
+      todos: [...targetToDo]
     })
   }
+
+  // editToDo = (editedToDo, index) => {
+  //   this.state.todos[index] = editedToDo
+  //   this.setState({
+  //     todos: [...this.state.todos]
+  //   })
+  // }
 
   render() {
     return (

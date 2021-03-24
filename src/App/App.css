@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+  -webkit-text-stroke: 0.7px black;
   text-decoration: none;
   color: #ffffff
 }
@@ -19,7 +20,6 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: start;
   width: 550px;
   min-height: 650px;
   background: linear-gradient(
@@ -74,6 +74,7 @@ button {
   text-transform: capitalize;
   margin: 15px;
   text-decoration: none;
+  font-size: 20px
 }
 
 footer {
