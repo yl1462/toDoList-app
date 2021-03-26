@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import config from '../config'
+import { v4 as uuidv4 } from 'uuid'
 
 class EditToDo extends Component {
   state = {
@@ -25,16 +27,47 @@ class EditToDo extends Component {
     })
   }
 
+  // handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   const editedToDo = {
+  //     title: this.state.title,
+  //     description: this.state.description,
+  //     id: this.state.id
+  //   }
+  //   this.props.editToDo(editedToDo, this.state.index)
+  //   this.props.history.push('/')
+  // }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    const editedToDo = {
-      title: this.state.title,
-      description: this.state.description,
-      id: this.state.id
-    }
-    this.props.editToDo(editedToDo, this.state.index)
+    fetch(`${config.API_ENDPOINT}/edit/:id`, {
+        method:'PATCH',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+            title:this.state.title,
+            description: this.state.description,
+            id: uuidv4()
+        })
+    })
+    .then(res => {
+        if (!res.ok) {
+            return res.json().then(err => {
+                console.log(`Error Message: ${err}`)
+                throw err
+            })
+        }
+        return res.json()
+    })
+    .then(editedToDo => {
+      this.props.editToDo(editedToDo, this.state.index)
     this.props.history.push('/')
-  }
+    })
+    .catch(err => {
+        this.setState({err})
+    })
+}
 
   render() {
     const {title, description} = this.state
