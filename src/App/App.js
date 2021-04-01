@@ -5,14 +5,11 @@ import Todolist from '../Todolist/Todolist'
 import AddToDo from '../AddToDo/AddToDo'
 import EditToDo from '../EditToDo/EditToDo'
 import { v4 as uuidv4 } from 'uuid'
+import config from '../config'
 
 class App extends Component {
   state = {
-    todos: [
-      {title: 'todo1', description: 'exactlytodo1',id: uuidv4()},
-      {title: 'todo2', description: 'exactlytodo2',id: uuidv4()},
-      {title: 'todo3', description: 'exactlytodo3',id: uuidv4()}
-    ]
+    todos: []
   }
 
   addToDo = (todo) => {
@@ -31,12 +28,19 @@ class App extends Component {
     })
   }
 
-  // editToDo = (editedToDo, index) => {
-  //   this.state.todos[index] = editedToDo
-  //   this.setState({
-  //     todos: [...this.state.todos]
-  //   })
-  // }
+  componentDidMount() {
+        fetch(`${config.API_ENDPOINT}/todo`)
+        .then((res) => {
+            if (!res.ok) return res.json().then(e => Promise.reject(e));
+            return res.json();
+        })
+        .then((todos) => {
+            this.setState({ todos });
+        })
+        .catch(error => {
+            console.error({ error });
+        });
+}
 
   render() {
     return (

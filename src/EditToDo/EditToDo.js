@@ -27,42 +27,24 @@ class EditToDo extends Component {
     })
   }
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const editedToDo = {
-  //     title: this.state.title,
-  //     description: this.state.description,
-  //     id: this.state.id
-  //   }
-  //   this.props.editToDo(editedToDo, this.state.index)
-  //   this.props.history.push('/')
-  // }
-
   handleSubmit = (e) => {
+    const editedToDo = {
+      title: this.state.title,
+      description: this.state.description,
+      id: this.state.id
+  }
     e.preventDefault()
-    fetch(`${config.API_ENDPOINT}/edit/:id`, {
+    fetch(`${config.API_ENDPOINT}/todo/${this.state.id}`, {
         method:'PATCH',
         headers:{
             'Content-Type':'application/json'
         },
-        body:JSON.stringify({
-            title:this.state.title,
-            description: this.state.description,
-            id: uuidv4()
-        })
+        body:JSON.stringify(editedToDo)
     })
-    .then(res => {
-        if (!res.ok) {
-            return res.json().then(err => {
-                console.log(`Error Message: ${err}`)
-                throw err
-            })
-        }
-        return res.json()
-    })
-    .then(editedToDo => {
+    .then(() => {
+      console.log('edit')
       this.props.editToDo(editedToDo, this.state.index)
-    this.props.history.push('/')
+      this.props.history.push('/')
     })
     .catch(err => {
         this.setState({err})
@@ -70,6 +52,7 @@ class EditToDo extends Component {
 }
 
   render() {
+    console.log(this.props)
     const {title, description} = this.state
 
     return (
@@ -83,7 +66,7 @@ class EditToDo extends Component {
               onChange={this.handleChange}
               className="Placeholder"
               /><br />
-            <input 
+            <textarea 
               type='text' 
               value={description}  
               name='description'
@@ -92,7 +75,6 @@ class EditToDo extends Component {
               /><br />
             <button 
               type='submit' 
-              onSubmit={this.handleSubmit}
               >Update</button>
           </form>
         </div>

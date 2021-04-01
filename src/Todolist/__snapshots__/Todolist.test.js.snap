@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todolist component renders a todo in ul for each todos in array 1`] = `
+<ul>
+  <li>
+    <p>
+      walk the dog
+      <br />
+      Dogs
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 0,
+                "todo": Object {
+                  "description": "Dogs",
+                  "title": "walk the dog",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+         
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+  <li>
+    <p>
+      walk the cat
+      <br />
+      Cats
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 1,
+                "todo": Object {
+                  "description": "Cats",
+                  "title": "walk the cat",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+         
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+  <li>
+    <p>
+      walk the pig
+      <br />
+      Pigs
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 2,
+                "todo": Object {
+                  "description": "Pigs",
+                  "title": "walk the pig",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+         
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+  <li>
+    <p>
+      walk the bird
+      <br />
+      Birds
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 3,
+                "todo": Object {
+                  "description": "Birds",
+                  "title": "walk the bird",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+         
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+</ul>
+`;

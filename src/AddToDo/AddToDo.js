@@ -15,20 +15,9 @@ class AddToDo extends Component {
     })
   }
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const todo = {
-  //     title: this.state.title,
-  //     description: this.state.description,
-  //     id: uuidv4()
-  //   }
-  //   this.props.addToDo(todo)
-  //   this.props.history.push('/')
-  // }
-
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch(`${config.API_ENDPOINT}/add`, {
+    fetch(`${config.API_ENDPOINT}/todo`, {
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -36,7 +25,6 @@ class AddToDo extends Component {
         body:JSON.stringify({
             title:this.state.title,
             description: this.state.description,
-            id: uuidv4()
         })
     })
     .then(res => {
@@ -73,7 +61,7 @@ class AddToDo extends Component {
               className="Placeholder"
             />
             <br />
-            <input
+            <textarea
               type='text'
               placeholder='description'
               value={description}

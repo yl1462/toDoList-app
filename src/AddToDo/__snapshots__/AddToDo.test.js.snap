@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToDo component renders the new todo given props 1`] = `
+<Fragment>
+  <div
+    className="AddToDo"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="Placeholder"
+        name="title"
+        onChange={[Function]}
+        placeholder="title"
+        type="text"
+        value="walk the dog"
+      />
+      <br />
+      <textarea
+        className="Placeholder"
+        name="description"
+        onChange={[Function]}
+        placeholder="description"
+        type="text"
+        value="Dogs"
+      />
+      <br />
+      <button
+        className="AddToDo-button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;
