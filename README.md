@@ -18,7 +18,7 @@ Need to change something, no need to delete and restart, just 'edit':
 ![Screen Shot 2021-04-04 at 13 25 41 PM](https://user-images.githubusercontent.com/68250067/113518115-e316b700-9549-11eb-9f75-fc7917a6bf04.png)
 
 Technology used:
-  Javascript
-  Node
-  CSS
+  Javascript,
+  Node,
+  CSS,
   HTML
