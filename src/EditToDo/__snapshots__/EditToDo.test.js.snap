@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditToDo component renders the new todo given props 1`] = `
+<Fragment>
+  <div
+    className="EditToDo"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="Placeholder"
+        name="title"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <br />
+      <textarea
+        className="Placeholder"
+        name="description"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <br />
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;

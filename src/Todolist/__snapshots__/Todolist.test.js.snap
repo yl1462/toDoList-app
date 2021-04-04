@@ -2,7 +2,9 @@
 
 exports[`Todolist component renders a todo in ul for each todos in array 1`] = `
 <ul>
-  <li>
+  <li
+    key="0"
+  >
     <p>
       walk the dog
       <br />
@@ -35,7 +37,9 @@ exports[`Todolist component renders a todo in ul for each todos in array 1`] = `
       </button>
     </p>
   </li>
-  <li>
+  <li
+    key="1"
+  >
     <p>
       walk the cat
       <br />
@@ -68,7 +72,9 @@ exports[`Todolist component renders a todo in ul for each todos in array 1`] = `
       </button>
     </p>
   </li>
-  <li>
+  <li
+    key="2"
+  >
     <p>
       walk the pig
       <br />
@@ -101,7 +107,9 @@ exports[`Todolist component renders a todo in ul for each todos in array 1`] = `
       </button>
     </p>
   </li>
-  <li>
+  <li
+    key="3"
+  >
     <p>
       walk the bird
       <br />

@@ -4,7 +4,6 @@ import './App.css'
 import Todolist from '../Todolist/Todolist'
 import AddToDo from '../AddToDo/AddToDo'
 import EditToDo from '../EditToDo/EditToDo'
-import { v4 as uuidv4 } from 'uuid'
 import config from '../config'
 
 class App extends Component {

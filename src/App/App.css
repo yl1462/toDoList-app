@@ -4,7 +4,7 @@
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  -webkit-text-stroke: 0.7px black;
+  -webkit-text-stroke: 0.5px black;
   text-decoration: none;
   color: #ffffff
 }
@@ -13,8 +13,8 @@ body {
   background: linear-gradient(
     180deg,
     #7400b8 0%,
-    #4EA8DE 50%,
-    #64DFDF 100%
+    #5390D9 50%,
+    #56CFE1 100%
   );
 }
 .App {
@@ -24,7 +24,7 @@ body {
   min-height: 650px;
   background: linear-gradient(
     180deg,
-    #80FFDB 0%,
+    #72EFDD 0%,
     #64DFDF 20%,
     #56CFE1 100% 
   );
@@ -36,7 +36,7 @@ body {
 
 h1 {
   margin: 50px 0 0 0;
-  font-size: 30px;
+  font-size: 37px;
 }
 
 .Home {
@@ -49,6 +49,9 @@ ul {
 
 ul li {
   border-style: outset;
+  margin: 7px;
+  padding: 25px;
+  background-color: #6930C3;
 }
 
 .AddToDo {
@@ -57,6 +60,11 @@ ul li {
 
 .Placeholder {
   color: #7400B8
+}
+
+.todotitle {
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 button {
@@ -72,7 +80,7 @@ button {
   );
   color: #ffffff;
   text-transform: capitalize;
-  margin: 15px;
+  margin: 35px 20px 15px 20px;
   text-decoration: none;
   font-size: 20px
 }

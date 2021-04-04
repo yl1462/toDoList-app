@@ -5,11 +5,11 @@ import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import EditToDo from './EditToDo'
 
-describe.skip('renders without crashing', () => {
-  it.skip('renders without crashing', () => {
+describe('renders without crashing', () => {
+  it('renders without crashing', () => {
     const div = document.createElement('div')
-    const history = createMemoryHistory();
-    const state = {
+    const props = {
+      state: {
         index: 0,
         todo: {
           title: "",
@@ -17,12 +17,11 @@ describe.skip('renders without crashing', () => {
           id: 1
         }
       }
-    history.push("/edit/1", state);
-    
+    }
 
     ReactDOM.render(
       <BrowserRouter>
-        <EditToDo history={history}/>
+        <EditToDo location={props} />
       </BrowserRouter>,
       div
     )
@@ -32,12 +31,18 @@ describe.skip('renders without crashing', () => {
 
 describe(`EditToDo component`, () => {
   const props = {
-    title: 'walk the dog',
-    description: 'Dogs'
+    state: {
+      index: 0,
+      todo: {
+        title: "",
+        description: "",
+        id: 1
+      }
+    }
   }
 
   it('renders the new todo given props', () => {
-    const wrapper = shallow(<EditToDo {...props} />)
+    const wrapper = shallow(<EditToDo location={props} />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })
