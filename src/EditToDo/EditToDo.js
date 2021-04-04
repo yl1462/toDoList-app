@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import config from '../config'
-import { v4 as uuidv4 } from 'uuid'
 
 class EditToDo extends Component {
   state = {
