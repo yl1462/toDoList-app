@@ -33,7 +33,7 @@ class EditToDo extends Component {
       id: this.state.id
   }
     e.preventDefault()
-    fetch(`${config.API_ENDPOINT}/todo/${this.state.id}`, {
+    fetch(`${config.API_ENDPOINT}/api/todo/${this.state.id}`, {
         method:'PATCH',
         headers:{
             'Content-Type':'application/json'

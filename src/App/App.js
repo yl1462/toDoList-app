@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/todo`)
+        fetch(`${config.API_ENDPOINT}/api/todo`)
         .then((res) => {
             if (!res.ok) return res.json().then(e => Promise.reject(e));
             return res.json();

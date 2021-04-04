@@ -16,7 +16,7 @@ class AddToDo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch(`${config.API_ENDPOINT}/todo`, {
+    fetch(`${config.API_ENDPOINT}/api/todo`, {
         method:'POST',
         headers:{
             'Content-Type':'application/json'
