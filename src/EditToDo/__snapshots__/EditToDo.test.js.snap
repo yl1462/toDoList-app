@@ -12,6 +12,7 @@ exports[`EditToDo component renders the new todo given props 1`] = `
         className="Placeholder"
         name="title"
         onChange={[Function]}
+        required={true}
         type="text"
         value=""
       />

@@ -13,6 +13,7 @@ exports[`AddToDo component renders the new todo given props 1`] = `
         name="title"
         onChange={[Function]}
         placeholder="title"
+        required={true}
         type="text"
         value="walk the dog"
       />

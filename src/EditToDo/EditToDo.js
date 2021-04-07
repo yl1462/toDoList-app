@@ -10,8 +10,8 @@ class EditToDo extends Component {
   }
 
   componentDidMount() {
-    const {title, description, id} = this.props.location.state.todo
-    const {index} = this.props.location.state
+    const { title, description, id } = this.props.location.state.todo
+    const { index } = this.props.location.state
     this.setState({
       title,
       description,
@@ -26,6 +26,7 @@ class EditToDo extends Component {
     })
   }
 
+  // update the selected to do, with the given id
   handleSubmit = (e) => {
     const editedToDo = {
       title: this.state.title,
@@ -43,7 +44,7 @@ class EditToDo extends Component {
     .then(() => {
       console.log('edit')
       this.props.editToDo(editedToDo, this.state.index)
-      this.props.history.push('/')
+      this.props.history.push('/home')
     })
     .catch(err => {
         this.setState({err})
@@ -55,6 +56,7 @@ class EditToDo extends Component {
 
     return (
       <>
+        {/* submit edited to do, with required title, and optional description */}
         <div className="EditToDo">
           <form onSubmit={this.handleSubmit}>
             <input 
@@ -63,6 +65,7 @@ class EditToDo extends Component {
               name='title'
               onChange={this.handleChange}
               className="Placeholder"
+              required
               /><br />
             <textarea 
               type='text' 

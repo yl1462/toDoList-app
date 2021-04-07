@@ -88,3 +88,10 @@ button {
 footer {
   margin: 35px;
 }
+
+.landingpage {
+  border-style: outset;
+  margin: 7px;
+  padding: 25px;
+  background-color: #6930C3;
+}

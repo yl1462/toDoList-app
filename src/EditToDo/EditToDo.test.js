@@ -6,6 +6,7 @@ import toJson from 'enzyme-to-json'
 import EditToDo from './EditToDo'
 
 describe('renders without crashing', () => {
+  //test if page loads
   it('renders without crashing', () => {
     const div = document.createElement('div')
     const props = {
@@ -41,6 +42,7 @@ describe(`EditToDo component`, () => {
     }
   }
 
+  //test if testing updated to do renders
   it('renders the new todo given props', () => {
     const wrapper = shallow(<EditToDo location={props} />)
     expect(toJson(wrapper)).toMatchSnapshot()

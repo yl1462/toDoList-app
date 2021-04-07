@@ -14,6 +14,7 @@ class AddToDo extends Component {
     })
   }
 
+  // posting new to do to the page and database
   handleSubmit = (e) => {
     e.preventDefault()
     fetch(`${config.API_ENDPOINT}/api/todo`, {
@@ -35,9 +36,11 @@ class AddToDo extends Component {
         }
         return res.json()
     })
+
+    // add to do, then go back to homepage
     .then(todo => {
       this.props.addToDo(todo)
-      this.props.history.push('/')
+      this.props.history.push('/home')
     })
     .catch(err => {
         this.setState({err})
@@ -51,6 +54,8 @@ class AddToDo extends Component {
       <>
         <div className="AddToDo">
           <form onSubmit={this.handleSubmit}>
+
+            {/* must give a title to the new to do */}
             <input
               type='text'
               placeholder='title'
@@ -58,8 +63,11 @@ class AddToDo extends Component {
               onChange={this.handleChange}
               name='title'
               className="Placeholder"
+              required
             />
             <br />
+
+            {/* optional description */}
             <textarea
               type='text'
               placeholder='description'
@@ -69,6 +77,8 @@ class AddToDo extends Component {
               className="Placeholder"
             />
             <br />
+
+            {/* submit the new to do, then go back to homepage */}
             <button type='submit' className='AddToDo-button'>Submit</button>
           </form>
         </div>

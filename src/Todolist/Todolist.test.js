@@ -6,6 +6,7 @@ import toJson from 'enzyme-to-json'
 import Todolist from './Todolist'
 
 describe('Component does not crash', () => {
+  //test if page loads
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
@@ -19,6 +20,7 @@ describe('Component does not crash', () => {
 })
 
 describe(`Todolist component`, () => {
+  //test if test data loads into each to do item
   const props = {
     todos: [
       {

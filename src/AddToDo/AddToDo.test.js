@@ -6,6 +6,7 @@ import toJson from 'enzyme-to-json'
 import AddToDo from './AddToDo'
 
 describe('renders without crashing', () => {
+  //test if page loads
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
@@ -24,6 +25,7 @@ describe(`AddToDo component`, () => {
     description: 'Dogs'
   }
 
+  //test if testing new to do could be added
   it('renders the new todo given props', () => {
     const wrapper = shallow(<AddToDo {...props} />)
     expect(toJson(wrapper)).toMatchSnapshot()
