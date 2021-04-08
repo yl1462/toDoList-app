@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config'
+import config from '../config';
+import PropTypes from 'prop-types'
 
 class EditToDo extends Component {
   state = {
@@ -66,6 +67,8 @@ class EditToDo extends Component {
               onChange={this.handleChange}
               className="Placeholder"
               required
+              pattern="[A-Za-z0-9\~\!\@\#\$\%\^\*\(\)\_]{3}"
+              title="at least 3 characters required"
               /><br />
             <textarea 
               type='text' 
@@ -85,3 +88,7 @@ class EditToDo extends Component {
 }
 
 export default EditToDo;
+
+EditToDo.propTypes = {
+  history: PropTypes.object.isRequired
+}

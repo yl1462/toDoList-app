@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import config from '../config'
+import config from '../config';
+import PropTypes from 'prop-types'
 
 class AddToDo extends Component {
 
@@ -64,6 +65,8 @@ class AddToDo extends Component {
               name='title'
               className="Placeholder"
               required
+              pattern="[A-Za-z0-9\~\!\@\#\$\%\^\*\(\)\_]{3}"
+              title="at least 3 characters required"
             />
             <br />
 
@@ -88,3 +91,7 @@ class AddToDo extends Component {
 }
 
 export default AddToDo;
+
+AddToDo.propTypes = {
+  history: PropTypes.object.isRequired
+}

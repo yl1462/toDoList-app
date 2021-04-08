@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../config'
 
 class Todolist extends Component {
+
+  handleDelete = (id) => {
+    fetch(`${config.API_ENDPOINT}/api/todo/${id}`, {
+        method:'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+    
+    .then(() => {
+      this.props.deleteToDo(id)
+      this.props.history.push('/home')
+    })
+    .catch(err => {
+        this.setState({err})
+    })
+}
+
   render() {
     return (
 
@@ -21,7 +40,7 @@ class Todolist extends Component {
                 <p>
                   {/* let user edit or delete their to do items */}
                   {todo.description}<br />
-                  <button><Link to={{ pathname: `/edit/${todo.id}`, state: { todo, index } }}>Edit</Link> </button> <button onClick={() => this.props.deleteToDo(todo.id)}>Delete</button>
+                  <button><Link to={{ pathname: `/edit/${todo.id}`, state: { todo, index } }}>Edit</Link> </button> <button onClick={() => this.handleDelete(todo.id)}>Delete</button>
                 </p>
               </li>
             ))
